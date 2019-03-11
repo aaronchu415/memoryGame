@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Memory Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+
+        background-image: url("http://playtmg.com/wp-content/uploads/2015/12/Purple-Space-Background.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    body {
+        margin-top: 5px;
+        margin-bottom: 50px;
+        width: 100%;
+
+        background-image: url("http://playtmg.com/wp-content/uploads/2015/12/Purple-Space-Background.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .memory-card {
+        margin: 5px;
+        padding: 10px;
+        height: 15vh;
+        /* background-color: rgb(68, 68, 57); */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: scale(1);
+        /* transform-style: preserve-3d; */
+        /* transition: transform .5s; */
+    }
+
+    /* .memory-card.flipped {
+        transform: rotateY(180deg);
+        background-image: url("./img/unflipped-logo.png");
+    } */
+
+    .front {
+        background-image: url("./img/unflipped-logo.png");
+    }
+
+    .memory-card:active {
+        transform: scale(.97);
+        transform: transform .2s
+    }
+
+    .memory-card-container {
+        position: relative;
+    }
+
+    .bash {
+        background-image: url("./img/bash-logo.png");
+    }
+
+    .cpp {
+        background-image: url("./img/cpp_logo.png");
+    }
+
+    .css {
+        background-image: url("./img/css-logo.png");
+    }
+
+    .go {
+        background-image: url("./img/go-logo.png");
+    }
+
+    .html {
+        background-image: url("./img/html-logo.svg");
+    }
+
+    .java {
+        background-image: url("./img/java-logo.png");
+    }
+
+    .js {
+        background-image: url("./img/js-logo.png");
+    }
+
+    .python {
+        background-image: url("./img/python-logo.png");
+    }
+
+    .default {
+        background-image: url("./img/unflipped-logo.png");
+    }
+
+    .memory-board {
+        padding: 10px;
+        width: 80%;
+        border: black;
+        border-style: solid;
+        background-color: rgba(36, 34, 34, 0.708);
+        perspective: 1000px;
+    }
+
+    .score-board {
+        padding: 20px;
+        width: 80%;
+    }
+
+    .count {
+        position: relative;
+        margin: 40px 0;
+        margin-left: 30px;
+        padding: 14px 16px;
+        font-size: 40px;
+        line-height: 40px;
+        font-weight: 600;
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.5)
+    }
+</style>
+
+<body>
+    <div class="container score-board">
+        <div class="row">
+            <div class="col-3">
+                <div class="count">0</div>
+            </div>
+        </div>
+    </div>
+    <div class="container memory-board">
+        <div class="row">
+            <div class="col-md-3 col-6 memory-card-container">
+                <div class="memory-card default" data-value="bash">
+                </div>
+            </div>
+            <div class="col-md-3 col-6 memory-card-container">
+                <div class="memory-card default" data-value="bash">
+                </div>
+            </div>
+            <div class="col-md-3 col-6 memory-card-container">
+                <div class="memory-card default" data-value="cpp">
+
+                </div>
+            </div>
+            <div class="col-md-3 col-6 memory-card-container">
+                <div class="memory-card default" data-value="cpp">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 col-6 memory-card-container">
+                <div class="memory-card default" data-value="css">
+
+                </div>
+
+            </div>
+            <div class="col-md-3 col-6 memory-card-container">
+                <div class="memory-card default" data-value="css">
+
+                </div>
+            </div>
+            <div class="col-md-3 col-6 memory-card-container">
+                <div class="memory-card default" data-value="go">
+
+                </div>
+            </div>
+            <div class="col-md-3 col-6 memory-card-container">
+                <div class="memory-card default" data-value="go">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-6 memory-card-container">
+                <div class="memory-card default" data-value="html">
+
+                </div>
+
+            </div>
+            <div class="col-md-3 col-6 memory-card-container">
+                <div class="memory-card default" data-value="html">
+
+                </div>
+            </div>
+            <div class="col-md-3 col-6 memory-card-container">
+                <div class="memory-card default" data-value="java">
+
+                </div>
+            </div>
+            <div class="col-md-3 col-6 memory-card-container">
+                <div class="memory-card default" data-value="java">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-6 memory-card-container">
+                <div class="memory-card default" data-value="js">
+
+                </div>
+
+            </div>
+            <div class="col-md-3 col-6 memory-card-container">
+                <div class="memory-card default" data-value="js">
+
+                </div>
+            </div>
+            <div class="col-md-3 col-6 memory-card-container">
+                <div class="memory-card default" data-value="python">
+
+                </div>
+            </div>
+            <div class="col-md-3 col-6 memory-card-container">
+                <div class="memory-card default" data-value="python">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+<script src="script.js"></script>
