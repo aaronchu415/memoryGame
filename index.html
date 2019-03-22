@@ -20,7 +20,7 @@
 
     html {
 
-        background-image: url("http://playtmg.com/wp-content/uploads/2015/12/Purple-Space-Background.jpg");
+        background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/ExspEUkoliksz67w8/green-matrix-background_r1gl8-f__F0000.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -31,7 +31,7 @@
         margin-bottom: 50px;
         width: 100%;
 
-        background-image: url("http://playtmg.com/wp-content/uploads/2015/12/Purple-Space-Background.jpg");
+        background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/ExspEUkoliksz67w8/green-matrix-background_r1gl8-f__F0000.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -129,6 +129,18 @@
         display: inline-block;
         background: rgba(255, 255, 255, 0.5)
     }
+
+    .mybutton {
+        position: relative;
+        margin: 40px 0;
+        margin-left: 30px;
+        padding: 14px 16px;
+        font-size: 25px;
+        line-height: 40px;
+        font-weight: 600;
+        display: inline-block;
+
+    }
 </style>
 
 <body>
@@ -136,6 +148,9 @@
         <div class="row">
             <div class="col-3">
                 <div class="count">0</div>
+            </div>
+            <div class="col-3">
+                <button type="button" onclick='setupGame()' class="mybutton btn btn-dark">Reset Game</button>
             </div>
         </div>
     </div>

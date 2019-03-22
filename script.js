@@ -58,6 +58,13 @@ function setupGame() {
 
     //shuffle the data elements
     randomizeBoard()
+
+    firstCard = null
+    secondCard = null
+    freezeBoard = false;
+    count = 0;
+    score = 0;
+
     countUp(score);
 }
 
